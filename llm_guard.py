@@ -5,12 +5,10 @@ import json
 import os
 
 from langchain_openai import ChatOpenAI
+from dotenv import load_dotenv
 
+load_dotenv()
 # ========= 守卫用的 LLM =========
-if "DEEPSEEK_API_KEY" not in os.environ:
-    os.environ["DEEPSEEK_API_KEY"] = (
-        "sk-31428cf43aa24253af9dcebf2aa27138"  # 或者直接用你原来的 key
-    )
 
 guard_llm = ChatOpenAI(
     model="deepseek-chat",

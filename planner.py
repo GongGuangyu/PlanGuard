@@ -5,6 +5,10 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import PydanticOutputParser
 import os, json, textwrap
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 from injec_dh_tools import (
     load_user_cases,
@@ -47,10 +51,7 @@ TOOLS_DESCRIPTION = build_tools_description()
 
 
 # ========= LLM =========
-if "DEEPSEEK_API_KEY" not in os.environ:
-    os.environ["DEEPSEEK_API_KEY"] = (
-        "sk-31428cf43aa24253af9dcebf2aa27138"  # 替换成你的密钥
-    )
+
 
 llm = ChatOpenAI(
     model="deepseek-chat",

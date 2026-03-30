@@ -23,6 +23,9 @@ from injec_dh_tools import (
 from pydantic import RootModel
 from langchain.tools import StructuredTool
 from llm_guard import llm_defense_judge
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 def _normalize_args(obj: Any) -> Any:
@@ -509,7 +512,7 @@ class ReasonedGate(BaseCallbackHandler):
 llm = ChatOpenAI(
     model="deepseek-chat",
     temperature=0,
-    api_key="sk-31428cf43aa24253af9dcebf2aa27138",  # 建议改为 os.environ["DEEPSEEK_API_KEY"]
+    api_key=os.environ["DEEPSEEK_API_KEY"],  # 建议改为 os.environ["DEEPSEEK_API_KEY"]
     base_url="https://api.deepseek.com/v1",
 )
 
