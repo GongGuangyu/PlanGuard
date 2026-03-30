@@ -1,2 +1,20 @@
-记得把仓库里面的API密钥全部都删除掉啊！！
-测试DH数据集和DS数据集的时候需要修改injec_dh_tools.py中的文件读取路径 为dh or ds
+```bash
+git clone https://github.com/GongGuangyu/PlanGuard.git
+cd PlanGuard
+pip install -r requirements.txt
+cp .env
+API_KEY=sk-your-real-key-here
+python eval_all_usertool_dh.py    # for all tools
+python eval_one_usertool_dh.py    # for one tool
+```
+
+
+PlanGuard/
+├── agent.py              # Main agent
+├── planner.py            # Planning module
+├── llm_guard.py          # LLM guardrail
+├── injec_dh_tools.py     # Injection detection tools
+├── requirements.txt      # Dependencies
+├── .env.example          # API key template
+├── user_cases.jsonl      # User test cases
+└── attacker_cases_dh.jsonl  # Attacker test cases
