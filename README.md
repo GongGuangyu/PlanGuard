@@ -6,7 +6,7 @@ cp .env
 API_KEY=sk-your-real-key-here
 python eval_all_usertool_dh.py    # for all tools
 python eval_one_usertool_dh.py    # for one tool
-```
+
 
 
 PlanGuard/
@@ -18,3 +18,4 @@ PlanGuard/
 ├── .env.example          # API key template
 ├── user_cases.jsonl      # User test cases
 └── attacker_cases_dh.jsonl  # Attacker test cases
+```
